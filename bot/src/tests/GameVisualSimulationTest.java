@@ -19,6 +19,7 @@ import rts.PhysicalGameState;
 import rts.PlayerAction;
 import rts.units.UnitTypeTable;
 import util.XMLWriter;
+import ai.abstraction.TurtleAttack;
 
 /**
  *
@@ -36,8 +37,9 @@ public class GameVisualSimulationTest {
         boolean gameover = false;
         
         //AI ai1 = new WorkerRush(utt, new BFSPathFinding());
-        AI ai1 = new MyBot(utt);
-        AI ai2 = new RandomBiasedAI();
+        AI ai1 = new MyBot(utt, new BFSPathFinding());
+        AI ai2 = new WorkerRush(utt, new BFSPathFinding());
+        
 
         JFrame w = PhysicalGameStatePanel.newVisualizer(gs,640,640,false,PhysicalGameStatePanel.COLORSCHEME_BLACK);
 //        JFrame w = PhysicalGameStatePanel.newVisualizer(gs,640,640,false,PhysicalGameStatePanel.COLORSCHEME_WHITE);
